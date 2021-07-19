@@ -4,4 +4,4 @@ USER spring:spring
 ARG JAR_FILE=target/*.jar
 ARG DEPENDENCY=target/dependency
 COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-Xmx512m","-Dserver.port=${PORT}","-jar","/app.jar"]
